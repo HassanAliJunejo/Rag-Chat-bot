@@ -1,0 +1,6 @@
+{
+  "name": "docusaurus-plugin-postcss",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "keywords": ["docusaurus", "plugin", "postcss", "tailwindcss"]
+}

@@ -1,0 +1,247 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/* Import Tailwind CSS v4 */
+@import 'tailwindcss';
+
+/* Cyber-tech and glassmorphic theme overrides */
+:root {
+  --ifm-color-primary: #00d9ff; /* Cyan as requested */
+  --ifm-color-primary-dark: #0099ff; /* Electric Blue as requested */
+  --ifm-color-primary-darker: #0077cc;
+  --ifm-color-primary-darkest: #005fa3;
+  --ifm-color-primary-light: #00d9ff; /* Cyan as requested */
+  --ifm-color-primary-lighter: #33e1ff;
+  --ifm-color-primary-lightest: #66e9ff;
+  --ifm-color-secondary: #6B46C1; /* Deep Purple as requested */
+  --ifm-color-secondary-dark: #553c9a;
+  --ifm-color-secondary-darker: #44327a;
+  --ifm-color-secondary-darkest: #33275a;
+  --ifm-color-dark-navy: #0A1128; /* Dark Navy as requested */
+  --ifm-code-font-size: 95%;
+  --ifm-color-emphasis-200: rgba(0, 217, 255, 0.2);
+  --ifm-color-emphasis-600: rgba(0, 217, 255, 0.6);
+  --ifm-color-emphasis-900: rgba(0, 217, 255, 0.9);
+}
+
+/* Glassmorphic and cyber-tech styling */
+body {
+  background-color: #000000 !important;
+  color: #e0f2fe;
+  overflow-x: hidden;
+}
+
+/* Cyber-tech button styling */
+.cyber-button {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.7);
+}
+
+.cyber-button::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #06b6d4, #3b82f6, #8b5cf6, #06b6d4);
+  z-index: -1;
+  border-radius: inherit;
+  background-size: 400%;
+  animation: glowing-border 3s linear infinite;
+}
+
+@keyframes glowing-border {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+/* Glassmorphic elements */
+.glassmorphic {
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Gradient text styling */
+.gradient-text {
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon glow effect */
+.neon-glow {
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.7));
+}
+
+/* Pulsing animation */
+.pulse-animation {
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 217, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 217, 255, 0);
+  }
+}
+
+/* Glassmorphic navbar */
+.navbar {
+  background: rgba(10, 17, 40, 0.3) !important; /* Dark Navy with transparency */
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar--fixed-top {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+}
+
+.navbar--sticky {
+  background: rgba(10, 17, 40, 0.85) !important; /* Darker when sticky */
+  backdrop-filter: blur(20px) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.navbar__inner {
+  padding: 0 2rem !important;
+}
+
+.navbar__brand {
+  color: #e0f2fe !important;
+  font-weight: 700 !important;
+}
+
+.navbar__title {
+  color: #e0f2fe !important;
+  font-weight: 700 !important;
+}
+
+.navbar__link {
+  color: #e0f2fe !important;
+  font-weight: 500 !important;
+  position: relative !important;
+}
+
+.navbar__link:hover {
+  color: #00d9ff !important;
+}
+
+.navbar__link::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -5px !important;
+  left: 0 !important;
+  width: 0 !important;
+  height: 2px !important;
+  background: linear-gradient(to right, #00d9ff, #0099ff) !important;
+  transition: width 0.3s ease !important;
+}
+
+.navbar__link:hover::after {
+  width: 100% !important;
+}
+
+.navbar__item {
+  margin: 0 0.5rem !important;
+}
+
+.navbar__items--right {
+  margin-left: auto !important;
+}
+
+.navbar__logo {
+  height: 32px !important;
+  width: 32px !important;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar for cyber-tech aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06b6d4, #3b82f6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0891b2, #2563eb);
+}
+
+/* Chatbot modal specific styles */
+.chatbot-modal-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.chatbot-modal {
+  background: rgba(10, 17, 40, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+.chat-message-user {
+  background: linear-gradient(135deg, rgba(0, 217, 255, 0.2), rgba(0, 153, 255, 0.2));
+  border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.chat-message-bot {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.chat-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.5);
+}

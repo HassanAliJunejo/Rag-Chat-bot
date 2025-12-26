@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical AI & Humanoid Robotics - Educational Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0a0f1d;
+            --bg-darker: #060a13;
+            --accent-cyan: #00f0ff;
+            --accent-blue: #0066ff;
+            --accent-silver: #c0c0c0;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --glass-bg: rgba(15, 25, 45, 0.6);
+            --glass-border: rgba(0, 240, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.05) 0%, transparent 20%),
+                linear-gradient(to bottom, var(--bg-darker), var(--bg-dark));
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Left Hero Section */
+        .hero-section {
+            width: 40%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .circuit-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, var(--accent-cyan) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, var(--accent-blue) 1px, transparent 1px),
+                radial-gradient(circle at 40% 80%, var(--accent-cyan) 1px, transparent 1px),
+                radial-gradient(circle at 60% 20%, var(--accent-blue) 1px, transparent 1px);
+            background-size: 100px 100px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .robot-image {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .robot-image img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.3));
+        }
+
+        .hero-content {
+            margin-top: 40px;
+            z-index: 2;
+        }
+
+        .book-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px 15px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature i {
+            color: var(--accent-cyan);
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        /* Right Chatbot Section */
+        .chat-section {
+            width: 60%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .chat-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+        }
+
+        .ai-indicator {
+            width: 12px;
+            height: 12px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            margin-right: 12px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .chat-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-message {
+            background: rgba(0, 102, 255, 0.2);
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .ai-message {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .chat-input {
+            padding: 20px;
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 15px 20px;
+            background: rgba(15, 25, 45, 0.7);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .chat-input input:focus {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+
+        .chat-input button {
+            background: linear-gradient(45deg, var(--accent-cyan), var(--accent-blue));
+            border: none;
+            color: var(--bg-darker);
+            padding: 15px 25px;
+            margin-left: 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .chat-input button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Particles */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { transform: translateY(-100vh) translateX(100px) rotate(360deg); opacity: 0; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .hero-section, .chat-section {
+                width: 100%;
+                padding: 20px;
+            }
+            
+            .hero-section {
+                padding-bottom: 0;
+            }
+        }
+
+        /* Micro-animations */
+        .hover-glow:hover {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+            border-color: var(--accent-cyan);
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .hud-element {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 5px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+        }
+
+        .hud-top-left {
+            top: 20px;
+            left: 20px;
+        }
+
+        .hud-top-right {
+            top: 20px;
+            right: 20px;
+        }
+
+        .hud-bottom-left {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .hud-bottom-right {
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HUD Elements -->
+    <div class="hud-element hud-top-left">SYSTEM STATUS: <span style="color: #00f0ff">ONLINE</span></div>
+    <div class="hud-element hud-top-right">AI CORE: <span style="color: #00f0ff">ACTIVE</span></div>
+    <div class="hud-element hud-bottom-left">SECURITY: <span style="color: #00f0ff">LEVEL 5</span></div>
+    <div class="hud-element hud-bottom-right">USER: <span style="color: #00f0ff">RESEARCHER</span></div>
+
+    <div class="container">
+        <!-- Left Hero Section -->
+        <div class="hero-section">
+            <div class="circuit-bg"></div>
+            
+            <div class="robot-image">
+                <svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Robot body -->
+                    <rect x="150" y="200" width="100" height="180" rx="10" fill="#222" stroke="#00f0ff" stroke-width="2"/>
+                    <!-- Robot head -->
+                    <circle cx="200" cy="150" r="40" fill="#333" stroke="#00f0ff" stroke-width="2"/>
+                    <!-- Robot eyes -->
+                    <circle cx="185" cy="140" r="5" fill="#00f0ff"/>
+                    <circle cx="215" cy="140" r="5" fill="#00f0ff"/>
+                    <!-- Robot mouth -->
+                    <rect x="180" y="160" width="40" height="5" rx="2" fill="#00f0ff"/>
+                    <!-- Robot arms -->
+                    <rect x="100" y="220" width="50" height="10" rx="5" fill="#222" stroke="#00f0ff" stroke-width="2"/>
+                    <rect x="250" y="220" width="50" height="10" rx="5" fill="#222" stroke="#00f0ff" stroke-width="2"/>
+                    <!-- Robot legs -->
+                    <rect x="160" y="380" width="20" height="80" rx="10" fill="#222" stroke="#00f0ff" stroke-width="2"/>
+                    <rect x="220" y="380" width="20" height="80" rx="10" fill="#222" stroke="#00f0ff" stroke-width="2"/>
+                    <!-- Circuit details -->
+                    <path d="M160 220 Q200 210 240 220" stroke="#00f0ff" stroke-width="1" fill="none"/>
+                    <path d="M160 240 Q200 230 240 240" stroke="#00f0ff" stroke-width="1" fill="none"/>
+                    <path d="M160 260 Q200 250 240 260" stroke="#00f0ff" stroke-width="1" fill="none"/>
+                </svg>
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="book-title">Physical AI & Humanoid Robotics</h1>
+                <p class="subtitle">Advanced educational platform for understanding the convergence of artificial intelligence and humanoid robotics. Explore cutting-edge research, implementation strategies, and future possibilities.</p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-brain"></i>
+                        <span>Neural Network Architectures</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-robot"></i>
+                        <span>Humanoid Kinematics & Control</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-microchip"></i>
+                        <span>Embodied AI Systems</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Research-Backed Curriculum</span>
+                    </div>
+                </div>
+                
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Real-time Learning Environment</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Chatbot Section -->
+        <div class="chat-section">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="ai-indicator"></div>
+                    <div class="chat-title">ROBOTICS EDUCATION ASSISTANT</div>
+                </div>
+                
+                <div class="chat-messages">
+                    <div class="message ai-message">
+                        Welcome to the Physical AI & Humanoid Robotics educational platform. I'm your AI assistant, ready to help you explore advanced robotics concepts. How can I assist with your learning today?
+                    </div>
+                    <div class="message user-message">
+                        What are the key challenges in humanoid locomotion?
+                    </div>
+                    <div class="message ai-message">
+                        Humanoid locomotion faces several complex challenges: balance control during dynamic movement, real-time trajectory planning, energy efficiency, and adapting to various terrains. The integration of sensory feedback systems is crucial for stable bipedal walking.
+                    </div>
+                </div>
+                
+                <div class="chat-input">
+                    <input type="text" placeholder="Ask a question about humanoid robotics...">
+                    <button><i class="fas fa-paper-plane"></i> Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Particle Animation Background -->
+    <div class="particles" id="particles"></div>
+
+    <script>
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size
+                const size = Math.random() * 5 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation duration
+                particle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize particles
+        createParticles();
+        
+        // Chat functionality
+        document.querySelector('.chat-input button').addEventListener('click', sendMessage);
+        document.querySelector('.chat-input input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        function sendMessage() {
+            const input = document.querySelector('.chat-input input');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Add user message
+                const messagesContainer = document.querySelector('.chat-messages');
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('message', 'user-message');
+                userMessage.textContent = message;
+                messagesContainer.appendChild(userMessage);
+                
+                // Clear input
+                input.value = '';
+                
+                // Scroll to bottom
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                
+                // Simulate AI response after delay
+                setTimeout(() => {
+                    const aiMessage = document.createElement('div');
+                    aiMessage.classList.add('message', 'ai-message');
+                    
+                    // Generate a relevant response based on the question
+                    if (message.toLowerCase().includes('locomotion') || message.toLowerCase().includes('walk') || message.toLowerCase().includes('move')) {
+                        aiMessage.textContent = "Humanoid locomotion involves complex control systems that integrate balance, gait planning, and sensory feedback. Modern approaches use deep reinforcement learning to develop adaptive walking patterns for various terrains.";
+                    } else if (message.toLowerCase().includes('ai') || message.toLowerCase().includes('intelligence')) {
+                        aiMessage.textContent = "Physical AI integrates cognitive capabilities with embodied systems. This includes perception, decision-making, and motor control that allows robots to interact with the physical world intelligently.";
+                    } else {
+                        aiMessage.textContent = "Physical AI and Humanoid Robotics combines machine learning, control theory, and mechanical engineering to create robots that can perceive, reason, and act in physical environments. What specific aspect would you like to explore?";
+                    }
+                    
+                    messagesContainer.appendChild(aiMessage);
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }, 1000);
+            }
+        }
+    </script>
+</body>
+</html>

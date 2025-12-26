@@ -1,0 +1,88 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/ros2-humanoid-book/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/ros2-humanoid-book/docs",
+          "mainDocId": "modules/module-1-ros2/chapter-1-introduction-to-ros2",
+          "docs": [
+            {
+              "id": "chapter-template",
+              "path": "/ros2-humanoid-book/docs/chapter-template"
+            },
+            {
+              "id": "community/contribution-guide",
+              "path": "/ros2-humanoid-book/docs/community/contribution-guide",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "content-validation-process",
+              "path": "/ros2-humanoid-book/docs/content-validation-process"
+            },
+            {
+              "id": "modules/module-1-ros2/chapter-1-introduction-to-ros2",
+              "path": "/ros2-humanoid-book/docs/modules/module-1-ros2/chapter-1-introduction-to-ros2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/module-1-ros2/chapter-2-ros2-communication-python-agents",
+              "path": "/ros2-humanoid-book/docs/modules/module-1-ros2/chapter-2-ros2-communication-python-agents",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/module-1-ros2/chapter-3-urdf-humanoid-structure",
+              "path": "/ros2-humanoid-book/docs/modules/module-1-ros2/chapter-3-urdf-humanoid-structure",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "modules/module-1-ros2/summary",
+              "path": "/ros2-humanoid-book/docs/modules/module-1-ros2/summary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reference/glossary",
+              "path": "/ros2-humanoid-book/docs/reference/glossary"
+            },
+            {
+              "id": "reference/ros2-concepts/nodes-topics-services",
+              "path": "/ros2-humanoid-book/docs/reference/ros2-concepts/nodes-topics-services",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reference/ros2-concepts/rclpy-basics",
+              "path": "/ros2-humanoid-book/docs/reference/ros2-concepts/rclpy-basics",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "reference/ros2-concepts/urdf-overview",
+              "path": "/ros2-humanoid-book/docs/reference/ros2-concepts/urdf-overview",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "visual-assets-template",
+              "path": "/ros2-humanoid-book/docs/visual-assets-template"
+            },
+            {
+              "id": "writing-guidelines",
+              "path": "/ros2-humanoid-book/docs/writing-guidelines"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/ros2-humanoid-book/docs/modules/module-1-ros2/chapter-1-introduction-to-ros2",
+                "label": "modules/module-1-ros2/chapter-1-introduction-to-ros2"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

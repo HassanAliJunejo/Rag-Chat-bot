@@ -1,0 +1,401 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "237": [
+      237
+    ],
+    "416": [
+      869,
+      416
+    ],
+    "693": [
+      693
+    ],
+    "913": [
+      869,
+      913
+    ],
+    "17896441": [
+      869,
+      401
+    ],
+    "main": [
+      354,
+      869,
+      792
+    ],
+    "runtime~main": [
+      792,
+      869,
+      354
+    ],
+    "032cb34c": [
+      71
+    ],
+    "0b507569": [
+      113
+    ],
+    "12c11b75": [
+      851
+    ],
+    "1a4e3797": [
+      869,
+      138
+    ],
+    "25ca5ab4": [
+      300
+    ],
+    "4e11e568": [
+      504
+    ],
+    "56e01667": [
+      265
+    ],
+    "5e95c892": [
+      647
+    ],
+    "74408c3d": [
+      608
+    ],
+    "846656e5": [
+      492
+    ],
+    "98e686ab": [
+      458
+    ],
+    "a7456010": [
+      235
+    ],
+    "a7bd4aaa": [
+      98
+    ],
+    "a7e6c23a": [
+      773
+    ],
+    "a8b21c87": [
+      247
+    ],
+    "a94703ab": [
+      869,
+      48
+    ],
+    "aba21aa0": [
+      742
+    ],
+    "b34d6635": [
+      869,
+      474
+    ],
+    "be7b6151": [
+      630
+    ],
+    "c141421f": [
+      957
+    ],
+    "c4f5d8e4": [
+      869,
+      634
+    ],
+    "c96b2618": [
+      512
+    ],
+    "e079b905": [
+      142
+    ],
+    "styles": [
+      48,
+      138,
+      354,
+      401,
+      416,
+      474,
+      634,
+      792,
+      913,
+      869
+    ]
+  },
+  "assets": {
+    "48": {
+      "js": [
+        {
+          "file": "assets/js/a94703ab.f957918a.js",
+          "hash": "f861c3cf26aa3fe0",
+          "publicPath": "/ros2-humanoid-book/assets/js/a94703ab.f957918a.js"
+        }
+      ]
+    },
+    "71": {
+      "js": [
+        {
+          "file": "assets/js/032cb34c.5feaa03d.js",
+          "hash": "422c77bc6d3adfc6",
+          "publicPath": "/ros2-humanoid-book/assets/js/032cb34c.5feaa03d.js"
+        }
+      ]
+    },
+    "98": {
+      "js": [
+        {
+          "file": "assets/js/a7bd4aaa.dc49cf30.js",
+          "hash": "6c547bd6e65cd089",
+          "publicPath": "/ros2-humanoid-book/assets/js/a7bd4aaa.dc49cf30.js"
+        }
+      ]
+    },
+    "113": {
+      "js": [
+        {
+          "file": "assets/js/0b507569.67a19b9f.js",
+          "hash": "81ada5226dd14720",
+          "publicPath": "/ros2-humanoid-book/assets/js/0b507569.67a19b9f.js"
+        }
+      ]
+    },
+    "138": {
+      "js": [
+        {
+          "file": "assets/js/1a4e3797.89862059.js",
+          "hash": "00c9ccd4ba87eeaf",
+          "publicPath": "/ros2-humanoid-book/assets/js/1a4e3797.89862059.js"
+        }
+      ]
+    },
+    "142": {
+      "js": [
+        {
+          "file": "assets/js/e079b905.b46e33a3.js",
+          "hash": "1d02996ba82559f6",
+          "publicPath": "/ros2-humanoid-book/assets/js/e079b905.b46e33a3.js"
+        }
+      ]
+    },
+    "235": {
+      "js": [
+        {
+          "file": "assets/js/a7456010.c8537851.js",
+          "hash": "030f26f93c103335",
+          "publicPath": "/ros2-humanoid-book/assets/js/a7456010.c8537851.js"
+        }
+      ]
+    },
+    "237": {
+      "js": [
+        {
+          "file": "assets/js/237.ea06f523.js",
+          "hash": "4354453155f7fca5",
+          "publicPath": "/ros2-humanoid-book/assets/js/237.ea06f523.js"
+        }
+      ]
+    },
+    "247": {
+      "js": [
+        {
+          "file": "assets/js/a8b21c87.52d51780.js",
+          "hash": "5426bcb85aa2d38d",
+          "publicPath": "/ros2-humanoid-book/assets/js/a8b21c87.52d51780.js"
+        }
+      ]
+    },
+    "265": {
+      "js": [
+        {
+          "file": "assets/js/56e01667.5282b892.js",
+          "hash": "3ef6df1ddb635553",
+          "publicPath": "/ros2-humanoid-book/assets/js/56e01667.5282b892.js"
+        }
+      ]
+    },
+    "300": {
+      "js": [
+        {
+          "file": "assets/js/25ca5ab4.3815d342.js",
+          "hash": "27dc12532f4de75e",
+          "publicPath": "/ros2-humanoid-book/assets/js/25ca5ab4.3815d342.js"
+        }
+      ]
+    },
+    "354": {
+      "js": [
+        {
+          "file": "assets/js/runtime~main.5d53cdb0.js",
+          "hash": "b81c7513a42ae381",
+          "publicPath": "/ros2-humanoid-book/assets/js/runtime~main.5d53cdb0.js"
+        }
+      ]
+    },
+    "401": {
+      "js": [
+        {
+          "file": "assets/js/17896441.b3884a07.js",
+          "hash": "baea835fb331fe3d",
+          "publicPath": "/ros2-humanoid-book/assets/js/17896441.b3884a07.js"
+        }
+      ]
+    },
+    "416": {
+      "js": [
+        {
+          "file": "assets/js/416.b1c40f78.js",
+          "hash": "88abf9534a521ce1",
+          "publicPath": "/ros2-humanoid-book/assets/js/416.b1c40f78.js"
+        }
+      ]
+    },
+    "458": {
+      "js": [
+        {
+          "file": "assets/js/98e686ab.baf658e7.js",
+          "hash": "903cbcb6480feb41",
+          "publicPath": "/ros2-humanoid-book/assets/js/98e686ab.baf658e7.js"
+        }
+      ]
+    },
+    "474": {
+      "js": [
+        {
+          "file": "assets/js/b34d6635.92a7a67a.js",
+          "hash": "91d09944a86b924f",
+          "publicPath": "/ros2-humanoid-book/assets/js/b34d6635.92a7a67a.js"
+        }
+      ]
+    },
+    "492": {
+      "js": [
+        {
+          "file": "assets/js/846656e5.1e32613e.js",
+          "hash": "828afc89b52b53a5",
+          "publicPath": "/ros2-humanoid-book/assets/js/846656e5.1e32613e.js"
+        }
+      ]
+    },
+    "504": {
+      "js": [
+        {
+          "file": "assets/js/4e11e568.475c8f61.js",
+          "hash": "09533a90000f5258",
+          "publicPath": "/ros2-humanoid-book/assets/js/4e11e568.475c8f61.js"
+        }
+      ]
+    },
+    "512": {
+      "js": [
+        {
+          "file": "assets/js/c96b2618.33ab5db6.js",
+          "hash": "7dd6ed825568d7b4",
+          "publicPath": "/ros2-humanoid-book/assets/js/c96b2618.33ab5db6.js"
+        }
+      ]
+    },
+    "608": {
+      "js": [
+        {
+          "file": "assets/js/74408c3d.36506649.js",
+          "hash": "7c5a4543fcc855ef",
+          "publicPath": "/ros2-humanoid-book/assets/js/74408c3d.36506649.js"
+        }
+      ]
+    },
+    "630": {
+      "js": [
+        {
+          "file": "assets/js/be7b6151.c99fe422.js",
+          "hash": "5278e261b8e527ae",
+          "publicPath": "/ros2-humanoid-book/assets/js/be7b6151.c99fe422.js"
+        }
+      ]
+    },
+    "634": {
+      "js": [
+        {
+          "file": "assets/js/c4f5d8e4.f1419b1d.js",
+          "hash": "23b60de0da289227",
+          "publicPath": "/ros2-humanoid-book/assets/js/c4f5d8e4.f1419b1d.js"
+        }
+      ]
+    },
+    "647": {
+      "js": [
+        {
+          "file": "assets/js/5e95c892.3d444395.js",
+          "hash": "0ff13d93948c4fef",
+          "publicPath": "/ros2-humanoid-book/assets/js/5e95c892.3d444395.js"
+        }
+      ]
+    },
+    "693": {
+      "js": [
+        {
+          "file": "assets/js/693.478c5ed9.js",
+          "hash": "7af772de942535ce",
+          "publicPath": "/ros2-humanoid-book/assets/js/693.478c5ed9.js"
+        }
+      ]
+    },
+    "742": {
+      "js": [
+        {
+          "file": "assets/js/aba21aa0.05996b87.js",
+          "hash": "b661d9db92ab29e6",
+          "publicPath": "/ros2-humanoid-book/assets/js/aba21aa0.05996b87.js"
+        }
+      ]
+    },
+    "773": {
+      "js": [
+        {
+          "file": "assets/js/a7e6c23a.202a675f.js",
+          "hash": "36055d45c31214aa",
+          "publicPath": "/ros2-humanoid-book/assets/js/a7e6c23a.202a675f.js"
+        }
+      ]
+    },
+    "792": {
+      "js": [
+        {
+          "file": "assets/js/main.1189ec84.js",
+          "hash": "00fd9e5fc5899233",
+          "publicPath": "/ros2-humanoid-book/assets/js/main.1189ec84.js"
+        }
+      ]
+    },
+    "851": {
+      "js": [
+        {
+          "file": "assets/js/12c11b75.053aa899.js",
+          "hash": "7b352106d971fd68",
+          "publicPath": "/ros2-humanoid-book/assets/js/12c11b75.053aa899.js"
+        }
+      ]
+    },
+    "869": {
+      "css": [
+        {
+          "file": "assets/css/styles.d592478a.css",
+          "hash": "054dabfcaef2fd0a",
+          "publicPath": "/ros2-humanoid-book/assets/css/styles.d592478a.css"
+        }
+      ]
+    },
+    "913": {
+      "js": [
+        {
+          "file": "assets/js/913.7712d468.js",
+          "hash": "75d2ff12ad155e8b",
+          "publicPath": "/ros2-humanoid-book/assets/js/913.7712d468.js"
+        }
+      ]
+    },
+    "957": {
+      "js": [
+        {
+          "file": "assets/js/c141421f.746d08ac.js",
+          "hash": "be79b6dd942bf1d3",
+          "publicPath": "/ros2-humanoid-book/assets/js/c141421f.746d08ac.js"
+        }
+      ]
+    }
+  }
+}

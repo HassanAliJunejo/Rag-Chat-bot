@@ -1,0 +1,70 @@
+# Dependency directories
+node_modules/
+
+# Docusaurus build output
+build/
+docusaurus.config.js.bak
+
+# Environment variables
+.env*
+!.env.example
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.sock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Temporary folders
+tmp/
+temp/
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+.venv.bak/
+dist/
+*.egg/
+*.egg-info/
+.installed.cfg
+*.manifest
+*.spec
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover

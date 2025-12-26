@@ -1,0 +1,183 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 17, 40, 0.3); /* Dark Navy with transparency */
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 0.8rem 2rem;
+}
+
+.navbar.sticky {
+  background: rgba(10, 17, 40, 0.85); /* Darker when sticky */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  padding: 0.6rem 2rem;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #e0f2fe;
+  font-weight: 700;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #00d9ff;
+}
+
+.logoImg {
+  height: 32px;
+  width: 32px;
+  margin-right: 12px;
+  filter: drop-shadow(0 0 8px rgba(0, 217, 255, 0.5));
+}
+
+.logoText {
+  background: linear-gradient(to right, #00d9ff, #0099ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navCenter {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #e0f2fe;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #00d9ff;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #00d9ff, #0099ff);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:global(.navbar__link--active) {
+  color: #00d9ff;
+}
+
+.navLink:global(.navbar__link--active)::after {
+  width: 100%;
+  background: linear-gradient(to right, #00d9ff, #0099ff);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+}
+
+.githubLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #e0f2fe;
+  font-weight: 500;
+  gap: 8px;
+  transition: color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.githubLink:hover {
+  color: #00d9ff;
+  background: rgba(0, 217, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.3);
+}
+
+.githubIcon {
+  transition: transform 0.3s ease;
+}
+
+.githubLink:hover .githubIcon {
+  transform: scale(1.1);
+}
+
+.githubText {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive design */
+@media (max-width: 996px) {
+  .navContainer {
+    padding: 0 1rem;
+  }
+  
+  .navCenter {
+    gap: 1.2rem;
+  }
+  
+  .logoText {
+    font-size: 1.1rem;
+  }
+  
+  .navLink {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .navCenter {
+    order: 3;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .logo {
+    font-size: 1.1rem;
+  }
+  
+  .githubLink {
+    padding: 6px 12px;
+  }
+}

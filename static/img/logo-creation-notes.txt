@@ -1,0 +1,23 @@
+# ROS 2 Humanoid Robotics Logo
+
+I have created the SVG logo file `simple-robot.svg` in the `static/img/` directory. This logo meets your requirements:
+- Minimal, futuristic design with a robot head and neural network pattern
+- Uses a cyan/blue gradient color scheme
+- Includes "ROS 2" text and "Humanoid Robotics" subtitle
+- Has a transparent background
+- Designed to work well as a navbar logo
+
+To create the PNG version, you have several options:
+
+1. Use an online SVG to PNG converter:
+   - Go to https://svgtopng.com/
+   - Upload the simple-robot.svg file
+   - Download the PNG version
+
+2. Use image editing software like GIMP or Adobe Illustrator to export as PNG
+
+3. Use a command-line tool if available on your system:
+   - Install ImageMagick and use: `magick convert simple-robot.svg simple-robot.png`
+   - Or install Inkscape and use: `inkscape -z -e simple-robot.png -w 200 -h 80 simple-robot.svg`
+
+Once you have the PNG version, place it in the same directory (`static/img/`) as `simple-robot.png`.

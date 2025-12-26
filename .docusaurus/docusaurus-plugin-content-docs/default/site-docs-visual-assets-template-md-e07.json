@@ -1,0 +1,15 @@
+{
+  "id": "visual-assets-template",
+  "title": "Visual Assets Template and Guidelines",
+  "description": "Purpose",
+  "source": "@site/docs/visual-assets-template.md",
+  "sourceDirName": ".",
+  "slug": "/visual-assets-template",
+  "permalink": "/ros2-humanoid-book/docs/visual-assets-template",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/visual-assets-template.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

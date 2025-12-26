@@ -1,0 +1,15 @@
+{
+  "id": "writing-guidelines",
+  "title": "Writing Guidelines and Style Requirements",
+  "description": "Purpose",
+  "source": "@site/docs/writing-guidelines.md",
+  "sourceDirName": ".",
+  "slug": "/writing-guidelines",
+  "permalink": "/ros2-humanoid-book/docs/writing-guidelines",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/writing-guidelines.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {}
+}

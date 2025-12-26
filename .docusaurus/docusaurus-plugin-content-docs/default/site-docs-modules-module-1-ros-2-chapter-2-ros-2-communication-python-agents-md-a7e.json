@@ -1,0 +1,27 @@
+{
+  "id": "modules/module-1-ros2/chapter-2-ros2-communication-python-agents",
+  "title": "Chapter 2: ROS 2 Communication & Python Agents",
+  "description": "Learning Objectives",
+  "source": "@site/docs/modules/module-1-ros2/chapter-2-ros2-communication-python-agents.md",
+  "sourceDirName": "modules/module-1-ros2",
+  "slug": "/modules/module-1-ros2/chapter-2-ros2-communication-python-agents",
+  "permalink": "/ros2-humanoid-book/docs/modules/module-1-ros2/chapter-2-ros2-communication-python-agents",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/modules/module-1-ros2/chapter-2-ros2-communication-python-agents.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 2,
+  "frontMatter": {
+    "sidebar_position": 2
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Chapter 1: Introduction to ROS 2 for Humanoid Robotics",
+    "permalink": "/ros2-humanoid-book/docs/modules/module-1-ros2/chapter-1-introduction-to-ros2"
+  },
+  "next": {
+    "title": "Chapter 3: Humanoid Structure with URDF",
+    "permalink": "/ros2-humanoid-book/docs/modules/module-1-ros2/chapter-3-urdf-humanoid-structure"
+  }
+}

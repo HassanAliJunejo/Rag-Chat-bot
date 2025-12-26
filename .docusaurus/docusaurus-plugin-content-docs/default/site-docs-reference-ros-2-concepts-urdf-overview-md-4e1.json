@@ -1,0 +1,27 @@
+{
+  "id": "reference/ros2-concepts/urdf-overview",
+  "title": "URDF Overview: Unified Robot Description Format",
+  "description": "Introduction",
+  "source": "@site/docs/reference/ros2-concepts/urdf-overview.md",
+  "sourceDirName": "reference/ros2-concepts",
+  "slug": "/reference/ros2-concepts/urdf-overview",
+  "permalink": "/ros2-humanoid-book/docs/reference/ros2-concepts/urdf-overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/reference/ros2-concepts/urdf-overview.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "rclpy Basics: Python Client Library for ROS 2",
+    "permalink": "/ros2-humanoid-book/docs/reference/ros2-concepts/rclpy-basics"
+  },
+  "next": {
+    "title": "Community Contribution Guide",
+    "permalink": "/ros2-humanoid-book/docs/community/contribution-guide"
+  }
+}

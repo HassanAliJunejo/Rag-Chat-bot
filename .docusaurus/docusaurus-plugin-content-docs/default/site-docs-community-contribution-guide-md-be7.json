@@ -1,0 +1,20 @@
+{
+  "id": "community/contribution-guide",
+  "title": "Community Contribution Guide",
+  "description": "Overview",
+  "source": "@site/docs/community/contribution-guide.md",
+  "sourceDirName": "community",
+  "slug": "/community/contribution-guide",
+  "permalink": "/ros2-humanoid-book/docs/community/contribution-guide",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/community/contribution-guide.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "URDF Overview: Unified Robot Description Format",
+    "permalink": "/ros2-humanoid-book/docs/reference/ros2-concepts/urdf-overview"
+  }
+}

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical AI & Humanoid Robotics - Antique Book UI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --parchment: #f4f1eb;
+            --parchment-dark: #e6dfd2;
+            --ink-blue: #2c3e50;
+            --antique-gold: #b8860b;
+            --antique-bronze: #8c7853;
+            --text-dark: #3a3a3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: var(--parchment);
+            color: var(--text-dark);
+            background-image: 
+                radial-gradient(var(--parchment-dark) 2px, transparent 2px),
+                radial-gradient(var(--parchment-dark) 2px, transparent 2px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            line-height: 1.6;
+            position: relative;
+            padding: 20px;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(184,134,11,0.05)" stroke-width="1"/></svg>');
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .book-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--parchment);
+            box-shadow: 
+                0 0 30px rgba(0, 0, 0, 0.3),
+                inset 0 0 60px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border: 1px solid var(--antique-gold);
+            border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="%23b8860b" stroke-width="2"/></svg>') 10 repeat;
+            padding: 40px;
+        }
+
+        .book-container::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 0;
+            width: 15px;
+            background: linear-gradient(to right, rgba(184,134,11,0.2), transparent);
+            z-index: 2;
+        }
+
+        /* Decorative elements */
+        .ornament-top, .ornament-bottom {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .ornament-top::after,
+        .ornament-bottom::after {
+            content: "❦ ❦ ❦";
+            font-size: 1.5rem;
+            color: var(--antique-gold);
+            letter-spacing: 10px;
+            display: block;
+        }
+
+        .ornament-bottom::after {
+            margin-top: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--antique-gold), transparent);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--antique-gold), transparent);
+        }
+
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: var(--ink-blue);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .book-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: var(--antique-gold);
+        }
+
+        .book-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--antique-bronze);
+            margin-bottom: 40px;
+        }
+
+        .book-description {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-style: italic;
+            color: var(--text-dark);
+        }
+
+        .cta-button {
+            background: transparent;
+            border: 2px solid var(--antique-gold);
+            color: var(--ink-blue);
+            padding: 12px 30px;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(184,134,11,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: var(--antique-gold);
+            color: var(--parchment);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 50px 20px;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--ink-blue);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background: var(--antique-gold);
+        }
+
+        .chapters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .chapter-card {
+            background: var(--parchment);
+            border: 1px solid var(--antique-bronze);
+            border-radius: 0;
+            padding: 30px;
+            position: relative;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .chapter-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 5px;
+            background: var(--antique-gold);
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .chapter-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--ink-blue);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .chapter-desc {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        /* Technical Illustrations */
+        .technical-illustration {
+            position: absolute;
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .illustration-1 {
+            top: 20%;
+            right: 10%;
+            width: 150px;
+            height: 150px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="black" stroke-width="0.5"/><line x1="50" y1="10" x2="50" y2="90" stroke="black" stroke-width="0.5"/><line x1="10" y1="50" x2="90" y2="50" stroke="black" stroke-width="0.5"/></svg>');
+        }
+
+        .illustration-2 {
+            bottom: 20%;
+            left: 10%;
+            width: 120px;
+            height: 120px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="20" width="60" height="60" fill="none" stroke="black" stroke-width="0.5"/><polygon points="50,15 65,50 50,85 35,50" fill="none" stroke="black" stroke-width="0.5"/></svg>');
+        }
+
+
+        /* Page transition effect */
+        .page-content {
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .page-content.fade-out {
+            opacity: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .book-title {
+                font-size: 2.5rem;
+            }
+
+            .book-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .book-container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .chapters-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .chapter-card {
+                padding: 20px;
+            }
+
+            .hero {
+                padding: 40px 15px;
+            }
+
+            .book-description {
+                padding: 0 10px;
+            }
+
+            .content-section {
+                padding: 30px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .book-title {
+                font-size: 2rem;
+            }
+
+            .book-subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .book-container {
+                padding: 15px;
+                margin: 5px;
+            }
+
+            .chapter-title {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 30px 10px;
+            }
+
+            .content-section {
+                padding: 25px 10px;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Ensure all elements are properly sized for mobile */
+        img, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Improve touch targets */
+        button, .cta-button {
+            min-height: 44px; /* Minimum touch target size for mobile */
+            min-width: 44px;
+        }
+
+        /* Prevent horizontal scrolling */
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Ensure proper text sizing */
+        html {
+            font-size: 16px; /* Standard base font size */
+        }
+
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+        }
+
+        /* Handwritten-style text effect for chat */
+        .handwritten {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="book-container">
+        <!-- Decorative top ornament -->
+        <div class="ornament-top"></div>
+        
+        <!-- Technical Illustrations -->
+        <div class="technical-illustration illustration-1"></div>
+        <div class="technical-illustration illustration-2"></div>
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="book-title">Physical AI & Humanoid Robotics</h1>
+            <p class="book-subtitle">Module I — The Robotic Nervous System (ROS 2)</p>
+            <p class="book-description">
+                A comprehensive exploration of the convergence between artificial intelligence and mechanical engineering, 
+                delving into the principles that govern autonomous humanoid systems.
+            </p>
+            <button class="cta-button">Begin Study</button>
+        </section>
+        
+        <!-- Decorative middle ornament -->
+        <div class="ornament-top"></div>
+        
+        <!-- Content Sections -->
+        <section class="content-section">
+            <h2 class="section-title">Chapters</h2>
+            <div class="chapters-grid">
+                <div class="chapter-card">
+                    <h3 class="chapter-title">Chapter I — ROS 2 Fundamentals</h3>
+                    <p class="chapter-desc">
+                        An in-depth examination of the Robot Operating System's second iteration, 
+                        exploring its distributed architecture and communication patterns that form 
+                        the backbone of modern robotics applications.
+                    </p>
+                </div>
+                
+                <div class="chapter-card">
+                    <h3 class="chapter-title">Chapter II — Robot Communication</h3>
+                    <p class="chapter-desc">
+                        A study of the complex communication systems that enable coordinated 
+                        behavior in robotic systems, including message passing, service interactions, 
+                        and action-based protocols for multi-agent coordination.
+                    </p>
+                </div>
+                
+                <div class="chapter-card">
+                    <h3 class="chapter-title">Chapter III — Sensors & Actuators</h3>
+                    <p class="chapter-desc">
+                        An analysis of the sensory and motor systems that allow robots to interact 
+                        with their environment, covering everything from tactile feedback to 
+                        precision control mechanisms for dexterous manipulation.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Decorative bottom ornament -->
+        <div class="ornament-bottom"></div>
+    </div>
+    
+
+    <script>
+        // Add page turn effect on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if we're on a mobile device
+            const isMobile = window.innerWidth <= 768;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe section elements
+            document.querySelectorAll('.content-section, .hero').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Add subtle interaction to chapter cards (only on non-touch devices)
+            const cards = document.querySelectorAll('.chapter-card');
+            cards.forEach(card => {
+                if (!isMobile) {
+                    card.addEventListener('mouseenter', function() {
+                        this.style.boxShadow = '8px 8px 25px rgba(0, 0, 0, 0.15)';
+                    });
+
+                    card.addEventListener('mouseleave', function() {
+                        this.style.boxShadow = '5px 5px 15px rgba(0, 0, 0, 0.1)';
+                    });
+                }
+            });
+
+            // Add page turn effect to CTA button
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('click', function() {
+                document.querySelector('.page-content').classList.add('fade-out');
+                setTimeout(() => {
+                    alert('Beginning your study of Physical AI & Humanoid Robotics...');
+                    document.querySelector('.page-content').classList.remove('fade-out');
+                }, 500);
+            });
+
+            // Handle window resize to update mobile state
+            window.addEventListener('resize', function() {
+                const newIsMobile = window.innerWidth <= 768;
+                if (newIsMobile !== isMobile) {
+                    location.reload(); // Simple approach to handle layout changes
+                }
+            });
+        });
+    </script>
+</body>
+</html>

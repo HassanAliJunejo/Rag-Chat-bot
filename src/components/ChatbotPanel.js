@@ -26,7 +26,7 @@ function ChatbotPanel({ isOpen, onClose }) {
   const checkConnectionStatus = async () => {
     setConnectionStatus('checking');
     try {
-      const response = await fetch('http://localhost:8000/health');
+      const response = await fetch('https://hassanalijunejo-deploy-rag-chatbot.hf.space/health');
       if (response.ok) {
         const data = await response.json();
         setConnectionStatus(data.status === 'online' ? 'online' : 'offline');
@@ -65,7 +65,7 @@ function ChatbotPanel({ isOpen, onClose }) {
 
     try {
       // Call the backend API
-      const response = await fetch('http://localhost:8000/chat', {
+      const response = await fetch('https://hassanalijunejo-deploy-rag-chatbot.hf.space/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
